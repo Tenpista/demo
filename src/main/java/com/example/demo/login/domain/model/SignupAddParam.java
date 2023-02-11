@@ -4,11 +4,26 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**
+ * ユーザー新規登録用パラメータークラス
+ */
 @Data
 public class SignupAddParam {
 
-    private String userId; //ユーザーID
-    private String password; //パスワード
-    private String userName; //ユーザー名
-    private Date birthday; //誕生日
+    /**
+     * ユーザーID
+     */
+    private String userId;
+    /**
+     * パスワード
+     */
+    private String password;
+    /**
+     * ユーザー名
+     */
+    private String userName;
+    /**
+     * 誕生日
+     */
+    private Date birthday;
 }
