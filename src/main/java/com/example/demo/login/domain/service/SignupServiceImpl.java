@@ -23,13 +23,13 @@ public class SignupServiceImpl implements SignupService {
      * ユーザー新規登録
      * @param form form
      */
-    public void add(SignupForm form) {
+    public int add(SignupForm form) {
 
         SignupAddParam param = new SignupAddParam();
         // フィールド値コピー
         CopyPropertiesUtils.copyProperties(param, form);
 
         // ユーザー新規登録
-        signupRepository.add(param);
+        return signupRepository.add(param);
     }
 }

@@ -11,5 +11,5 @@ public interface SignupService {
      * ユーザー新規登録
      * @param form form
      */
-    void add(SignupForm form);
+    int add(SignupForm form);
 }

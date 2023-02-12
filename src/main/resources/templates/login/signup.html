@@ -20,57 +20,39 @@
             <tr>
                 <th class="active col-sm-3">ユーザーID</th>
                 <td>
-                    <div class="form-group">
-                        <input type="text" class="form-control" th:field="*{userId}"/>
-                    </div>
-<!--                    &lt;!&ndash; ポイント１ : エラー用CSSの追加 &ndash;&gt;
                     <div class="form-group" th:classappend = "${#fields.hasErrors('userId')} ? 'has-error'">
                         <input type="text" class="form-control" th:field="*{userId}"/>
-                        &lt;!&ndash; ポイント２ : 個別エラーメッセージの表示 &ndash;&gt;
-                        <span class = "text-danger" th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}">userId error</span>
-                    </div>-->
+                        <span class="text-danger" th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}">userId error</span>
+                    </div>
                 </td>
             </tr>
             <!-- パスワードの入力エリア -->
             <tr>
                 <th class="active">パスワード</th>
                 <td>
-                    <div class="form-group">
-                        <input type="text" class="form-control" th:field="*{password}"/>
-                    </div>
-<!--                    &lt;!&ndash; ポイント１ : エラー用CSSの追加 &ndash;&gt;
                     <div class="form-group" th:classappend="${#fields.hasErrors('password')} ? 'has-error'">
                         <input type="text" class="form-control" th:field="*{password}"/>
-                        &lt;!&ndash; 個別エラーメッセージの表示 &ndash;&gt;
                         <span class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">password error</span>
-                    </div>-->
+                    </div>
                 </td>
             </tr>
             <!-- ユーザー名の入力エリア -->
             <tr>
                 <th class="active">ユーザー名</th>
                 <td>
-                    <div class="form-group">
-                        <input type="text" class="form-control" th:field="*{userName}"/>
-                    </div>
-<!--                    &lt;!&ndash; ポイント１ : エラー用CSSの追加 &ndash;&gt;
                     <div class="form-group" th:classappend="${#fields.hasErrors('userName')} ? 'has-error'">
                         <input type="text" class="form-control" th:field="*{userName}"/>
-                        &lt;!&ndash; 個別エラーメッセージの表示 &ndash;&gt;
                         <span class="text-danger" th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">userName error</span>
-                    </div>-->
+                    </div>
                 </td>
             </tr>
             <tr>
                 <th class="active">誕生日</th>
                 <td>
-                    <div class="form-group">
+                    <div class="form-group" th:classappend="${#fields.hasErrors('birthday')} ? 'hasError'">
                         <input type="text" class="form-control" placeholder="yyyy/MM/dd" th:field="*{birthday}"/>
+                        <span class="text-danger" th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}">birthday error</span>
                     </div>
-                    <!-- ポイント１ : エラー用CSSの追加 -->
-<!--                    <div class="form-group" th:classappend="${#fields.hasErrors('birthday')} ? 'hasError'">-->
-                        <!-- 個別エラーメッセージの表示 -->
-<!--                        <span class="text-danger" th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}">birthday error</span>-->
                 </td>
             </tr>
         </table>
